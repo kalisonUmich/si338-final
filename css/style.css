@@ -46,7 +46,7 @@ h1 {
     display: block;
     line-height: 1.75em;
     font-weight: bold;
-    font-size: 1.75em;
+    font-size: 2em;
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     color: var(--text-color);
@@ -56,7 +56,7 @@ h1 {
     display: block;
     /* font-weight: bold; */
     /* font-size: 1.35em; */
-    font-size: 4em;
+    font-size: 1.75em;
     margin-top: 1em;
     margin-bottom: 1em;
     color: var(--text-color);
@@ -106,8 +106,26 @@ a {
 a:hover {
     color: black;
 }
-/*               */
 
+#skip-to-content {
+    display: block;
+    position: absolute;
+    top: -100px;
+    text-align: center;
+    background-color: white;
+    color: black; 
+    padding: 1em;  
+    z-index: 100;
+
+    transition-property: top;
+    transition-duration: 0.2s;
+}
+#skip-to-content:focus {
+    top:10px;
+    left: 10px;
+    border: 3px dashed red;
+
+}
 
 
 /* styling the main content */
@@ -155,7 +173,7 @@ main {
 }
 
 /* styling the cards inside the cards to be even glassier */
-/*#case-study-card-text,*/ .explore-button {
+.explore-button {
     background-color:linear-gradient(
     160deg,
     rgba(255, 255, 255, 0.4) 0%, 
@@ -182,7 +200,6 @@ main {
 }
 #case-study-card-wrapper {
     display: grid;
-    grid-template-columns: auto auto;
     gap: 1em;
 }
 
@@ -190,13 +207,13 @@ main {
     display: grid;
     padding: 1.5em;
     justify-content: stretch;
-    gap: 1.5em;
+    gap: 0.5em;
 }
 
 #case-study-card-text {
     /* padding: 0.75em 1em; */
     text-align: center;
-    justify-self: center;
+    /* justify-self: center; */
 }
 
 
@@ -289,3 +306,14 @@ footer {
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ACCESSIBILITY PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE CASE STUDIES PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#cs-case-study-card-wrapper {
+    display: grid;
+    gap: 2em;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ABOUT PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

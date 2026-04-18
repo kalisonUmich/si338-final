@@ -5,7 +5,7 @@
 
 #sticky-header {
     position: sticky;
-    z-index: 100;
+    z-index: 50;
     top: 0;
     transition: top 0.5s ease-in-out;
     background-color: var(--page-gray);
@@ -28,5 +28,13 @@ nav div {
 }
 nav div a {
     text-align: center;
+}
+}
+
+@media (min-width: 1000px) {
+    #case-study-card-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1em;
 }
 }
