@@ -1,3 +1,4 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~STYLING DEFAULTS~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 * {
     box-sizing: border-box;
 }
@@ -34,7 +35,7 @@ footer > * {
 }
 h1 {
     display: block;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bold;
     line-height: 1.2em;
     margin-top: 0.25em;
@@ -113,7 +114,6 @@ a:hover {
 main {
     margin: var(--page-margin);
     display: grid;
-    gap: 10em;
 }
 
 /* styling the hi im alison block */
@@ -141,7 +141,7 @@ main {
 
 
 /* styling the cards to be glossy*/
-.section-sans-header, .case-study-card, .image-link, #spacing-wrapper {
+.glassy-block {
     background: var(--card-color);
     border: 1px solid var(--card-border);
     backdrop-filter: blur(10px);
@@ -170,8 +170,10 @@ main {
     0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-/*                           */
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~STYLING MAIN PAGE~~~~~~~~~~~~~~~~~~~~ */
+#main-page-h1 {
+    font-size: 5em;
+}
 
 
 
@@ -282,3 +284,8 @@ footer {
         opacity: 0;
     }
 }
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ACCESSIBILITY PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
