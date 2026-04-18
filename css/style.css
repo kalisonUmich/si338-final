@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --page-margin: 2em;
+    --format-gap: 2em;
+    --page-purple: #3d0050;
+    --page-blue: #00022d;
+    --page-gray: #3b3b3b;
+    --card-color: linear-gradient(160deg, rgba(255, 255, 255, 0.15) 0%, rgba(255,255,255, 0.05) 100%);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --text-color: white;
+    --text-shadow-color: black;
+    --box-shadow-color: var(--card-border);
+;
+}
+
+/* text and cross-section styling */
+p, li, nav a, footer a, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+}
+h1, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px var(--text-shadow-color);
+
+}
+#home-button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px var(--text-shadow-color);
+}
+footer > * {
+    text-shadow: 1px 1px 2px var(--box-shadow-color);
+}
+h1 {
+    display: block;
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: var(--text-color);
+ }
+ h2 {
+    display: block;
+    line-height: 1.75em;
+    font-weight: bold;
+    font-size: 1.75em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    color: var(--text-color);
+
+ }
+ h3 {
+    display: block;
+    /* font-weight: bold; */
+    /* font-size: 1.35em; */
+    font-size: 4em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: var(--text-color);
+
+ }
+p, nav a{
+    display: block;
+    line-height: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: var(--text-color);
+
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+li {
+    position: relative;
+    padding-left: 1.5em;
+
+    display: block;
+    line-height: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: var(--text-color);
+}
+li:before {
+    content: "+";
+    position: absolute;
+    left: 0;
+
+
+
+}
+
+
+body {
+    background: radial-gradient(circle at center, #640481 10%, var(--page-purple) 40%, var(--page-blue));
+}
+
+/* styling links */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+}
+/*               */
+
+
+/* styling the header */
+#sticky-header {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    transition: top 0.5s ease-in-out;
+    background-color: var(--page-gray);
+    box-shadow: 0px 5px 5px var(--text-shadow-color);
+    
+}
+
+
+
+
+
+nav { 
+    margin: 0 var(--page-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--format-gap);
+}
+nav div {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--format-gap);
+}
+nav div a {
+    text-align: center;
+}
+
+
+
+/* styling the main content */
+main {
+    margin: var(--page-margin);
+    display: grid;
+    gap: 10em;
+}
+
+/* styling the hi im alison block */
+#spacing-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+#name-header {
+    aspect-ratio: 1;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+
+}
+#name-header p {
+    font-size: 1em;
+
+}
+
+
+
+/* styling the cards to be glossy*/
+.section-sans-header, .case-study-card, .image-link, #spacing-wrapper {
+    background: var(--card-color);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 5px 5px var(--box-shadow-color),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.section-sans-header {
+    padding: 3em 4em;
+}
+
+/* styling the cards inside the cards to be even glassier */
+/*#case-study-card-text,*/ .explore-button {
+    background-color:linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(255, 255, 255, 0.1) 100%
+    );
+
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 5px 5px var(--box-shadow-color),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/*                           */
+
+
+
+
+#my-work {
+    display: grid;
+}
+#case-study-card-wrapper {
+    display: grid;
+    gap: 1em;
+}
+
+.case-study-card {
+    display: grid;
+    padding: 1.5em;
+    justify-content: stretch;
+    gap: 1.5em;
+}
+
+#case-study-card-text {
+    /* padding: 0.75em 1em; */
+    text-align: center;
+    justify-self: center;
+}
+
+
+
+/* making the image BIG */
+.case-study-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.explore-button {
+    padding: 0.75em 1em;
+}
+
+/* fix the h3 top margin for spacing */
+.case-study-card > *{
+    text-align: left;
+}
+/*                                     */
+
+/*                          */
+
+/* styling accesssibility card without header and the top blurb*/
+.section-sans-header {
+    display: grid;
+    justify-items: center;
+}
+.section-sans-header p {    
+    text-align: center;
+}   
+
+
+
+/* styling the footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    margin: var(--page-margin);
+    gap: var(--format-gap);
+    background-color: var(--page-gray);
+    box-shadow: 0px -5px 5px black;
+    margin: 0;
+    
+}
+#contact {
+    display: flex;
+    align-items: center;
+    gap: var(--format-gap);
+}
+
+@media (min-width: 700px) {
+    
+}
+
+
+/* styling the particles */
+#particle-up-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* stops particles from expanding the screen */
+    overflow: hidden;
+    /* stops it from blocking clicks */
+    pointer-events: none;
+    
+}
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(194, 194, 194, 0.15);
+    animation: float 10s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150vh) rotate(360deg);
+        opacity: 0;
+    }
+}
