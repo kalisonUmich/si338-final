@@ -212,6 +212,7 @@ main {
 }
 #case-study-card-wrapper {
     display: grid;
+    grid-template-columns: auto auto;
     gap: 1em;
 }
 
