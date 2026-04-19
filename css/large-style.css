@@ -1,8 +1,6 @@
 @media (min-width: 700px) {
 
 /* styling the header */
-
-
 #sticky-header {
     position: sticky;
     z-index: 50;
@@ -10,7 +8,12 @@
     transition: top 0.5s ease-in-out;
     background-color: var(--page-gray);
     box-shadow: 0px 5px 5px var(--text-shadow-color);
-    
+}
+#menu-toggle {
+    display: none;
+}
+#menu-items {
+    display: flex;
 }
 
 
@@ -30,6 +33,10 @@ nav div a {
     text-align: center;
 }
 }
+
+
+
+
 
 @media (min-width: 1000px) {
     #case-study-card-wrapper {

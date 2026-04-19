@@ -210,6 +210,8 @@ a {
     background: var(--card-color), url("../images/three-lines.png");
     background-size: 90%;
     background-position: center;
+    background-repeat: no-repeat;
+    
     transition: box-shadow 0.2s ease-in;
     height: 4em;
     width: 4em;
@@ -219,6 +221,7 @@ a {
     inset 1px 2px 5px 2px rgba(255, 255, 255, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1);
 }
+
 .invisible {
     display:none;
 }
@@ -296,8 +299,17 @@ main {
 }
 .case-study-card a {
     display: block;
+    object-fit: cover;
+    align-content: center;
+    justify-content: center;
     outline-offset: 4px;
+    transition: transform 0.2s ease;
 }
+
+.case-study-card a:hover img {
+    transform: scale(0.98);
+}
+
 
 
 
@@ -337,11 +349,6 @@ footer {
     align-items: center;
     gap: var(--format-gap);
 }
-
-@media (min-width: 700px) {
-    
-}
-
 
 /* styling the particles */
 #particle-up-container {
@@ -389,3 +396,16 @@ footer {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ABOUT PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    *, *:before, *:hover {
+        transition: none !important;
+    }
+    .particle {
+        animation: none;
+    }
+
+}

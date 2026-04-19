@@ -27,13 +27,38 @@ console.log(particlesContainer);
 
 
 
-    // removing hover element for page you're already on
-    let currentPage = document.querySelector(".remove-hover");
-    currentPage.classList.remove("style-a");
-    currentPage.style.pointerEvents = "none";
+// removing hover element for page you're already on
+let currentPage = document.querySelector(".remove-hover");
+currentPage.classList.remove("style-a");
+currentPage.style.pointerEvents = "none";
 
-    //button toggling mobile view's expanding menu
-    let menuButton = document.getElementById("menu-toggle");
-    menuButton.addEventListener("click", function() {
-        document.getElementById("menu-items").classList.toggle("invisible");
-    })
+//button toggling mobile view's expanding menu
+let menuButton = document.getElementById("menu-toggle");
+let menuItems = document.getElementById("menu-items");
+menuButton.addEventListener("click", function() {
+
+    //if invisible
+    if(menuItems.classList.contains("invisible")) {
+        menuItems.classList.remove("invisible");
+        menuItems.setAttribute("aria-expanded", "true");
+    }
+    //if visible
+    else {
+        menuItems.classList.add("invisible");
+        menuItems.setAttribute("aria-expanded", "false");
+    }
+});
+
+// making it so when the screen shrinks to 700px, the header is automatically closed
+let mediaQuery = window.matchMedia("(min-width: 700px)");
+mediaQuery.addEventListener("change", function(event) {
+    if(event.matches) {
+        //if width is 700px
+        menuItems.classList.remove("invisible");
+        menuItems.removeAttribute("aria-expanded");
+    }
+    else {
+        menuItems.classList.add("invisible");
+        menuItems.setAttribute("aria-expanded", "false");
+    }
+});
