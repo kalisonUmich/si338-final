@@ -88,9 +88,10 @@ li:before {
     content: "+";
     position: absolute;
     left: 0;
+}
 
-
-
+a:focus-visible {
+border: 3px dashed red;
 }
 
 
@@ -123,7 +124,6 @@ a:hover {
 #skip-to-content:focus {
     top:10px;
     left: 10px;
-    border: 3px dashed red;
 
 }
 
@@ -132,6 +132,7 @@ a:hover {
 main {
     margin: var(--page-margin);
     display: grid;
+    gap: 7em;
 }
 
 /* styling the hi im alison block */
@@ -162,7 +163,7 @@ main {
 .glassy-block {
     background: var(--card-color);
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
 
     box-shadow: 0 5px 5px var(--box-shadow-color),
     inset 0 1px 0 rgba(255, 255, 255, 0.4),
@@ -223,6 +224,11 @@ main {
     display: block;
     width: 100%;
     height: auto;
+    padding: 3px;
+}
+.case-study-card a {
+    display: block;
+    outline-offset: 4px;
 }
 
 .explore-button {
@@ -314,6 +320,5 @@ footer {
     display: grid;
     gap: 2em;
 }
-
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ABOUT PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

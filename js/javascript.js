@@ -24,3 +24,16 @@ console.log(particlesContainer);
         
         particlesContainer.appendChild(particle);
     }
+
+// // image links don't do focus states very well in css
+// let imgLinks =  document.querySelectorAll("a > img");
+
+// imgLinks.forEach(function(i) {
+//     i.parentElement.addEventListener("focus", function() {
+//         console.log("a > img a in focus")
+//         i.parentElement.style.border = "5px dashed red";
+//     });
+//     i.parentElement.addEventListener("blur", function() {
+//         i.parentElement.style.border = "none";
+//     });
+// });
