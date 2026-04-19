@@ -31,3 +31,9 @@ console.log(particlesContainer);
     let currentPage = document.querySelector(".remove-hover");
     currentPage.classList.remove("style-a");
     currentPage.style.pointerEvents = "none";
+
+    //button toggling mobile view's expanding menu
+    let menuButton = document.getElementById("menu-toggle");
+    menuButton.addEventListener("click", function() {
+        document.getElementById("menu-items").classList.toggle("invisible");
+    })
