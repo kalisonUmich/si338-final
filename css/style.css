@@ -27,7 +27,7 @@ h1, h2 {
 }
 #home-button {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     text-shadow: 1px 1px 2px var(--text-shadow-color);
 }
 footer > * {
@@ -46,7 +46,7 @@ h1 {
     display: block;
     line-height: 1.75em;
     font-weight: bold;
-    font-size: clamp(1.2rem, 5vw, 2rem);
+    font-size: clamp(0.8rem, 5vw, 2rem);
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     color: var(--text-color);
@@ -55,21 +55,24 @@ h1 {
  h3 {
     display: block;
     /* font-weight: bold; */
-    /* font-size: 1.35em; */
-    font-size: 1.75rem;
+    font-size: clamp(0.75rem, 5vw, 1.75rem);
     margin-top: 1em;
     margin-bottom: 1em;
     color: var(--text-color);
 
  }
-p, nav a{
+p, nav a, li{
     display: block;
     line-height: 1.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    font-size: clamp(0.5rem, 5vw, 1.2rem);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: var(--text-color);
-
 }
+nav a, footer a, footer p {
+    font-size: clamp(0.5rem, 2vw, 1rem);
+}
+
 ul {
     list-style: none;
     padding-left: 0;
@@ -175,17 +178,22 @@ a {
 
     border: 1px solid var(--card-border);
     backdrop-filter: blur(15px);
-    transition: 0.1s box-shadow ease;
+    transition: 0.1s box-shadow ease, backdrop-filter 0.5s ease;
+
 
     box-shadow: 0 5px 5px var(--box-shadow-color),
     inset 0 1px 0 rgba(43, 43, 43, 0.4),
     0 0 0 1px rgba(43, 43, 43, 0.1);
     padding: clamp(0.2em, 5vw, 1em) clamp(0.3em, 5vw, 1.33em);
+    margin: var(--page-margin);
 }
 .explore-button:hover {
     box-shadow: 0 -2px 3px var(--box-shadow-color),
     inset 1px 2px 5px 2px rgba(43, 43, 43, 0.4),
     0 0 0 1px rgba(43, 43, 43, 0.1);
+
+    backdrop-filter: blur(0px);
+
 }
 
 
@@ -214,17 +222,13 @@ a {
     background-repeat: no-repeat;
     
     transition: box-shadow 0.2s ease-in;
-    height: 4em;
-    width: 4em;
+    height: 3rem;
+    width: 3rem;
 }
 #menu-toggle:hover {
     box-shadow: 0 -2px 3px var(--box-shadow-color),
     inset 1px 2px 5px 2px rgba(255, 255, 255, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.invisible {
-    display:none;
 }
 
 nav {
@@ -254,7 +258,6 @@ main {
     align-content: center;
     padding: clamp(0.25em, 5vw, 3em) clamp(0.33em, 5vw, 3em);
 
-    
 }
 
 #name-header {
@@ -265,24 +268,25 @@ main {
     text-align: center;
     /* width: 50%; */
 }
-#name-header *{
-    width: 50%;
+#name-header{
+    margin: var(--page-margin);
     
 }
+
 
 #my-work {
     display: grid;
 }
 #case-study-card-wrapper {
     display: grid;
-    gap: 1em;
+    gap: 3em;
 }
 
 .case-study-card {
     display: grid;
-    padding: 1.5em;
+    /* padding: 1em; */
     justify-content: stretch;
-    gap: 0.5em;
+    gap: 1em;
 }
 
 #case-study-card-text {
@@ -310,12 +314,19 @@ main {
 }
 
 .case-study-card a:hover img {
-    transform: scale(0.98);
+    transform: scale(0.95);
+    outline-offset: 10px;
+
+    border: 10px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 5px var(--box-shadow-color),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+
 }
 
-
-
-
+figure a {
+    display: block;
+}
 /* fix the h3 top margin for spacing */
 .case-study-card > *{
     text-align: left;
@@ -414,8 +425,4 @@ footer {
         animation: none;
     }
 
-}
-
-#particle-up-container {
-    outline: solid 2px red;
 }

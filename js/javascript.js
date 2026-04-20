@@ -33,32 +33,42 @@ currentPage.classList.remove("style-a");
 currentPage.style.pointerEvents = "none";
 
 //button toggling mobile view's expanding menu
-let menuButton = document.getElementById("menu-toggle");
-let menuItems = document.getElementById("menu-items");
-menuButton.addEventListener("click", function() {
+//jquery to make the animation smoother
+let $menuItems = $("#menu-items");
+let $menuButton = $("#menu-toggle");
 
-    //if invisible
-    if(menuItems.classList.contains("invisible")) {
-        menuItems.classList.remove("invisible");
-        menuItems.setAttribute("aria-expanded", "true");
+let menuItems = document.querySelector("#menu-items");
+let menuToggle = document.querySelector("#menu-toggle");
+let motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if(!window.matchMedia("(min-width: 700px)").matches){ 
+    $menuItems.hide();
+}
+
+$menuButton.on("click", function() { 
+    if(motionQuery.matches) {
+        console.log("reduced motion on");
+        $menuItems.toggle();
+        menuToggle.toggleAttribute("aria-expanded");
     }
-    //if visible
     else {
-        menuItems.classList.add("invisible");
-        menuItems.setAttribute("aria-expanded", "false");
+        console.log("reduced motion off");
+        $menuItems.slideToggle();
+        menuToggle.toggleAttribute("aria-expanded");
     }
+        
 });
 
 // making it so when the screen shrinks to 700px, the header is automatically closed
-let mediaQuery = window.matchMedia("(min-width: 700px)");
-mediaQuery.addEventListener("change", function(event) {
-    if(event.matches) {
-        //if width is 700px
-        menuItems.classList.remove("invisible");
-        menuItems.removeAttribute("aria-expanded");
+let sizeQuery = window.matchMedia("(min-width: 700px)");
+sizeQuery.addEventListener("change", function(event) {
+    if(!event.matches) {
+        //if width switches to less than 700px
+        $menuItems.hide();
+        menuItems.setAttribute("aria-expanded", "false");
     }
     else {
-        menuItems.classList.add("invisible");
-        menuItems.setAttribute("aria-expanded", "false");
+        $menuItems.show();
+        menuItems.removeAttribute("aria-expended");
     }
 });
