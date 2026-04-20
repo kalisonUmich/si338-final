@@ -3,8 +3,8 @@
     box-sizing: border-box;
 }
 :root {
-    --page-margin: 2em;
-    --format-gap: 2em;
+    --page-margin: clamp(1rem, 5vw, 2rem);
+    --format-gap: 2rem;
     --page-purple: #3d0050;
     --page-blue: #00022d;
     --page-gray: #3b3b3b;
@@ -27,7 +27,7 @@ h1, h2 {
 }
 #home-button {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.2em;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     text-shadow: 1px 1px 2px var(--text-shadow-color);
 }
 footer > * {
@@ -35,7 +35,7 @@ footer > * {
 }
 h1 {
     display: block;
-    font-size: 3em;
+    font-size: clamp(1rem, 5vw, 3rem);
     font-weight: bold;
     line-height: 1.2em;
     margin-top: 0.25em;
@@ -46,7 +46,7 @@ h1 {
     display: block;
     line-height: 1.75em;
     font-weight: bold;
-    font-size: 2em;
+    font-size: clamp(1.2rem, 5vw, 2rem);
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     color: var(--text-color);
@@ -56,7 +56,7 @@ h1 {
     display: block;
     /* font-weight: bold; */
     /* font-size: 1.35em; */
-    font-size: 1.75em;
+    font-size: 1.75rem;
     margin-top: 1em;
     margin-bottom: 1em;
     color: var(--text-color);
@@ -135,7 +135,7 @@ a {
     text-align: center;
     background-color: white;
     color: black; 
-    padding: 1em;  
+    padding: clamp(0.2em, 5vw, 1em);  
     z-index: 100;
 
     transition-property: top;
@@ -161,7 +161,8 @@ a {
 }
 
 .section-sans-header {
-    padding: 3em 4em;
+    padding: clamp(0.25em, 5vw, 3em) clamp(0.33em, 5vw, 3em);
+    /* padding: 3em 4em; */
 }
 
 /* styling the buttons inside the cards to be even glassier */
@@ -179,7 +180,7 @@ a {
     box-shadow: 0 5px 5px var(--box-shadow-color),
     inset 0 1px 0 rgba(43, 43, 43, 0.4),
     0 0 0 1px rgba(43, 43, 43, 0.1);
-    padding: 1em 1.33em;
+    padding: clamp(0.2em, 5vw, 1em) clamp(0.3em, 5vw, 1.33em);
 }
 .explore-button:hover {
     box-shadow: 0 -2px 3px var(--box-shadow-color),
@@ -236,7 +237,7 @@ nav {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~STYLING MAIN PAGE~~~~~~~~~~~~~~~~~~~~ */
 #main-page-h1 {
-    font-size: 5em;
+    font-size: clamp(1rem, 10vw, 5rem);
 }
 
 /* styling the main content */
@@ -251,20 +252,22 @@ main {
     display: flex;
     justify-content: center;
     align-content: center;
+    padding: clamp(0.25em, 5vw, 3em) clamp(0.33em, 5vw, 3em);
+
     
 }
 
 #name-header {
-    aspect-ratio: 1;
+    /* aspect-ratio: 1; */
     display: grid;
     align-content: center;
-    justify-content: center;
+    justify-items: center;
     text-align: center;
-    width: 50%;
-
+    /* width: 50%; */
 }
-#name-header p {
-    font-size: 1em;
+#name-header *{
+    width: 50%;
+    
 }
 
 #my-work {
@@ -296,6 +299,7 @@ main {
     width: 100%;
     height: auto;
     padding: 3px;
+    transition: transform 0.2s ease;
 }
 .case-study-card a {
     display: block;
@@ -303,7 +307,6 @@ main {
     align-content: center;
     justify-content: center;
     outline-offset: 4px;
-    transition: transform 0.2s ease;
 }
 
 .case-study-card a:hover img {
@@ -325,6 +328,7 @@ main {
 .section-sans-header {
     display: grid;
     justify-items: center;
+    
 }
 .section-sans-header p {    
     text-align: center;
@@ -347,7 +351,7 @@ footer {
 #contact {
     display: flex;
     align-items: center;
-    gap: var(--format-gap);
+    /* gap: var(--format-gap); */
 }
 
 /* styling the particles */
