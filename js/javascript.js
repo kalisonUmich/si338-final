@@ -32,6 +32,17 @@ let currentPage = document.querySelector(".remove-hover");
 currentPage.classList.remove("style-a");
 currentPage.style.pointerEvents = "none";
 
+
+function toggleAriaExpanded(element) {
+    if(element.getAttribute("aria-expanded") == "true") {
+        element.setAttribute("aria-expanded", "false");
+    }
+    else {
+        element.setAttribute("aria-expanded", "true");
+    }
+}
+
+
 //button toggling mobile view's expanding menu
 //jquery to make the animation smoother
 let $menuItems = $("#menu-items");
@@ -48,14 +59,15 @@ if(!window.matchMedia("(min-width: 700px)").matches){
 
 $menuButton.on("click", function() { 
     if(motionQuery.matches) {
-        console.log("reduced motion on");
         $menuItems.toggle();
-        menuToggle.toggleAttribute("aria-expanded");
+        toggleAriaExpanded(menuToggle);
     }
     else {
-        console.log("reduced motion off");
         $menuItems.slideToggle();
-        menuToggle.toggleAttribute("aria-expanded");
+        toggleAriaExpanded(menuToggle);
+    }
+    if(menuToggle.getAttribute("aria-expanded") == "true") {
+        console.log("aria-expanded");
     }
         
 });
@@ -65,12 +77,14 @@ let sizeQuery = window.matchMedia("(min-width: 700px)");
 sizeQuery.addEventListener("change", function(event) {
     if(!event.matches) {
         //if width switches to less than 700px
+        console.log("size smaller than 700");
         $menuItems.hide();
         menuItems.setAttribute("aria-expanded", "false");
         menuToggle.style.visibility = "visible";
 
     }
     else {
+        console.log("size larger than 700");
         $menuItems.show();
         menuItems.removeAttribute("aria-expended");
         menuToggle.style.visibility = "hidden";
