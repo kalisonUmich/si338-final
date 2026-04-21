@@ -248,7 +248,7 @@ nav {
 main {
     margin: var(--page-margin);
     display: grid;
-    gap: 7em;
+    gap: 3em;
 }
 
 /* styling the hi im alison block */
@@ -256,6 +256,7 @@ main {
     display: flex;
     justify-content: center;
     align-content: center;
+    text-align: center;
     padding: clamp(0.25em, 5vw, 3em) clamp(0.33em, 5vw, 3em);
 
 }
@@ -278,19 +279,22 @@ main {
     display: grid;
 }
 #case-study-card-wrapper {
+    width: 100%;
     display: grid;
     gap: 3em;
 }
 
 .case-study-card {
     display: grid;
+    width: 100%;
     /* padding: 1em; */
     justify-content: stretch;
+    align-content: baseline;
     gap: 1em;
 }
 
 #case-study-card-text {
-    /* padding: 0.75em 1em; */
+    padding: clamp(0.5em, 2vw, 0.8em);
     text-align: center;
     /* justify-self: center; */
 }
@@ -304,13 +308,21 @@ main {
     height: auto;
     padding: 3px;
     transition: transform 0.2s ease;
+    border: solid 2px var(--card-border);
+    
+
 }
 .case-study-card a {
     display: block;
-    object-fit: cover;
+    width: 100%;
+    /* object-fit: cover; */
     align-content: center;
     justify-content: center;
     outline-offset: 4px;
+}
+.case-study-card figure {
+    display:block;
+    width: 100%;
 }
 
 .case-study-card a:hover img {
@@ -324,9 +336,6 @@ main {
 
 }
 
-figure a {
-    display: block;
-}
 /* fix the h3 top margin for spacing */
 .case-study-card > *{
     text-align: left;
@@ -398,8 +407,10 @@ footer {
         opacity: 0;
     }
 }
-
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~STYLING SPECIAL MAIN GAP~~~~~~~~~~~~~~~~~~*/
+#main-page #main-content {
+    gap: 7em;
+}
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ACCESSIBILITY PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -411,6 +422,15 @@ footer {
     display: grid;
     gap: 2em;
 }
+.case-study-card h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    display: block;
+    font-size: clamp(0.5rem, 3vw, 2rem);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-shadow: none;
+} 
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ABOUT PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
