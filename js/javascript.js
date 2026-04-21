@@ -43,6 +43,7 @@ let motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if(!window.matchMedia("(min-width: 700px)").matches){ 
     $menuItems.hide();
+
 }
 
 $menuButton.on("click", function() { 
@@ -66,9 +67,14 @@ sizeQuery.addEventListener("change", function(event) {
         //if width switches to less than 700px
         $menuItems.hide();
         menuItems.setAttribute("aria-expanded", "false");
+        menuToggle.style.visibility = "visible";
+
     }
     else {
         $menuItems.show();
         menuItems.removeAttribute("aria-expended");
+        menuToggle.style.visibility = "hidden";
+
+        
     }
 });

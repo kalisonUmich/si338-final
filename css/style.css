@@ -413,15 +413,26 @@ footer {
 }
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ACCESSIBILITY PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE CASE STUDIES PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #cs-case-study-card-wrapper {
     display: grid;
     gap: 2em;
 }
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~CASE STuDY PICTURES INDIVIDUALLY */
+figure > img {
+    width: 100%;
+    border: solid 2px var(--card-border);
+
+}
+.has-figure {
+    display: grid;
+    gap: 1em;
+}
+
+
+
 .case-study-card h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
     display: block;
@@ -432,8 +443,7 @@ footer {
 } 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~STYLING THE ABOUT PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~REDUCED MOTION~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 
@@ -446,3 +456,4 @@ footer {
     }
 
 }
+
